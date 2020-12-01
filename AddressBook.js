@@ -117,7 +117,7 @@ class AddressBook{
 }
 
 try{
-    let contact= new AddressBook("Ranganath","Vatti","gorantla","hundupur","andrapradesh",515231,7483247032,"devangmranganth@gmail.com");
+    let contact= new AddressBook("Ranganath","Vatti","gorantla","hundupur","andrapradesh",515230,7483247032,"devangmranganth@gmail.com");
     addressBookArray.push(contact);
     let contact1= new AddressBook("Harinath","Vatti","gorantla","anatapur","andrapradesh",515231,6309609657,"harinath@gmail.com");
     addressBookArray.push(contact1);
@@ -196,9 +196,9 @@ catch(e){
 //UC_6
 
 try{
-    let contact= new AddressBook("Srinath","Vatti","gorantla","anatapur","andrapradesh",515231,7483247033,"srinath@gmail.com");
+    let contact= new AddressBook("Srinath","Vatti","gorantla","anatapur","andrapradesh",515233,7483247033,"srinath@gmail.com");
     addressBookArray.push(contact);
-    let contact1= new AddressBook("Harinath","Vatti","gorantla","anatapur","andrapradesh",515231,6309609657,"harinath@gmail.com");
+    let contact1= new AddressBook("Harinath","Vatti","gorantla","anatapur","andrapradesh",515234,6309609657,"harinath@gmail.com");
     addressBookArray.push(contact1);
 }
 catch(e){
@@ -219,7 +219,7 @@ const addNewContact=(newContact)=>{
 }
 
 
-let newContact= new AddressBook("Srinath","Vatti","gorantla","anatapur","andrapradesh",515231,7483247033,"srinath@gmail.com");
+let newContact= new AddressBook("Srinath","Vatti","gorantla","anatapur","andrapradesh",515235,7483247033,"srinath@gmail.com");
 try{
 let contactAddedIs=addNewContact(newContact);
 console.log('contactAddedIs ',contactAddedIs)
@@ -271,7 +271,7 @@ console.log(countByplace);
 
 //UC_11
 const sortContactsByAlphabetical=()=>{
-    addressBookArray.sort(function(a, b){
+    addressBookArray.sort((a, b)=>{
         if(a.firstName < b.firstName) { return -1; }
         if(a.firstName > b.firstName) { return 1; }
         return 0;
@@ -280,3 +280,15 @@ const sortContactsByAlphabetical=()=>{
 }
 
 console.log(sortContactsByAlphabetical());
+
+//UC_12
+const sortContactsOfZip=()=>{
+    addressBookArray.sort((a, b)=>{
+        if(a.zip < b.zip) { return -1; }
+        if(a.zip > b.zip) { return 1; }
+        return 0;
+    })
+    return addressBookArray;
+}
+
+console.log(sortContactsOfZip());
