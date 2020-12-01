@@ -268,3 +268,15 @@ const countOfPersonsByPlace=(place)=>{
 
 let countByplace=countOfPersonsByPlace("andrapradesh");
 console.log(countByplace);
+
+//UC_11
+const sortContactsByAlphabetical=()=>{
+    addressBookArray.sort(function(a, b){
+        if(a.firstName < b.firstName) { return -1; }
+        if(a.firstName > b.firstName) { return 1; }
+        return 0;
+    })
+    return addressBookArray;
+}
+
+console.log(sortContactsByAlphabetical());
