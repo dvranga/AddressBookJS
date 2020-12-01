@@ -207,3 +207,23 @@ catch(e){
 let sizeOfContact=addressBookArray.length;
 let reduceCount=addressBookArray.reduce(count=>count+1,0);
 console.log(sizeOfContact,reduceCount);
+//UC_7
+console.log(addressBookArray);
+
+const addNewContact=(newContact)=>{
+    addressBookArray.filter(person=>{
+        if(person.firstName===newContact.firstName) throw ("Person exist");
+        else addressBookArray.push(newContact) ;
+    })
+    return newContact;
+}
+
+
+let newContact= new AddressBook("Srinath","Vatti","gorantla","anatapur","andrapradesh",515231,7483247033,"srinath@gmail.com");
+try{
+let contactAddedIs=addNewContact(newContact);
+console.log('contactAddedIs ',contactAddedIs)
+}
+catch(e){
+    console.log(e);
+}
