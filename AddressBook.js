@@ -127,3 +127,49 @@ try{
 catch(e){
     console.error(e);
 }
+const showContact=(firstName)=>{
+    for (let contact of addressBookArray) {
+        if(contact.firstName===firstName){
+            return contact;
+        }
+    }
+}
+//UC_4
+let requiredContact=showContact("Harinath");
+console.log('requiredContact  ',requiredContact);
+
+function editContact(firstName, updatedContact, updatedValue) {
+
+    let person=showContact(firstName);
+
+    switch (updatedContact) {
+        case "address":
+             let address = updatedValue;
+            return person.address = address;
+        case "city": 
+            let city = updatedValue;
+             return person.city = city;
+        case "state": 
+            let state = updatedValue;
+             return person.state = state;
+        case "zip": 
+            let zip = updatedValue;
+           return person.zip = zip;
+        case "phoneNumber":
+            let phoneNumber = updatedValue;
+            return person.phoneNumber = phoneNumber;
+        case "email": 
+            let email = updatedValue;
+             return person.email = email;
+        default:
+            throw "Invalid updatedContact";
+    }
+}
+
+try{
+    let updatedContact=editContact("Ranganath","phoneNumber",7093446244);
+    console.log('updatedContact ',updatedContact);
+    console.log(addressBookArray);
+}catch(e){
+    console.error(e);
+}
