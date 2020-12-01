@@ -117,7 +117,7 @@ class AddressBook{
 }
 
 try{
-    let contact= new AddressBook("Ranganath","Vatti","gorantla","anatapur","andrapradesh",515231,7483247032,"devangmranganth@gmail.com");
+    let contact= new AddressBook("Ranganath","Vatti","gorantla","hundupur","andrapradesh",515231,7483247032,"devangmranganth@gmail.com");
     addressBookArray.push(contact);
     let contact1= new AddressBook("Harinath","Vatti","gorantla","anatapur","andrapradesh",515231,6309609657,"harinath@gmail.com");
     addressBookArray.push(contact1);
@@ -225,5 +225,23 @@ let contactAddedIs=addNewContact(newContact);
 console.log('contactAddedIs ',contactAddedIs)
 }
 catch(e){
+    console.log(e);
+}
+//UC_8
+
+const checkPersonExist=(firstName, city)=> {
+      let contact=showContact(firstName);
+      let result=false;
+      addressBookArray.filter(contact=>{
+          if(contact.city===city){
+              result=true;
+          }
+      })
+      return result;
+}
+try{
+    let findExistsOrNot=checkPersonExist("Ranganath","hundupur");
+    console.log('findExistsOrNot ',findExistsOrNot);
+}catch(e){
     console.log(e);
 }
