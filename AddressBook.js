@@ -240,8 +240,23 @@ const checkPersonExist=(firstName, city)=> {
       return result;
 }
 try{
-    let findExistsOrNot=checkPersonExist("Ranganath","hundupur");
-    console.log('findExistsOrNot ',findExistsOrNot);
+    let findExists=checkPersonExist("Ranganath","hundupur");
+    console.log('findExists ',findExists);
 }catch(e){
     console.log(e);
 }
+
+//UC_9
+const showContactByPlace=(place)=>{
+    let contact=new Array();
+    addressBookArray.filter(checkByPlace=>{
+        console.log(checkByPlace.city===place)
+        if(checkByPlace.city===place || checkByPlace.state===place){
+            contact.push(showContact(checkByPlace.firstName));
+        }
+    })
+    return contact;
+}
+
+let contactByPlace=showContactByPlace("andrapradesh");
+console.log('contactByPlace ',contactByPlace);
