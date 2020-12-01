@@ -177,7 +177,7 @@ try{
 //UC_5
 const deleteContact=(firstName)=>{
    let contact=showContact(firstName);
-   if(contact=="undefied") return "contact not present";
+   if(contact==="undefined") throw"contact not present";
     addressBookArray.forEach(contact => {
         if(contact.firstName==firstName){
             addressBookArray.pop(contact);
@@ -185,7 +185,25 @@ const deleteContact=(firstName)=>{
     });
     return contact;
 }
-
+try{
 let deletedContact=deleteContact("Harinath");
 console.log('deletedContact ',deletedContact);
 console.log(addressBookArray);
+}
+catch(e){
+    console.log(e);
+}
+//UC_6
+
+try{
+    let contact= new AddressBook("Srinath","Vatti","gorantla","anatapur","andrapradesh",515231,7483247033,"srinath@gmail.com");
+    addressBookArray.push(contact);
+    let contact1= new AddressBook("Harinath","Vatti","gorantla","anatapur","andrapradesh",515231,6309609657,"harinath@gmail.com");
+    addressBookArray.push(contact1);
+}
+catch(e){
+    console.error(e);
+}
+let sizeOfContact=addressBookArray.length;
+let reduceCount=addressBookArray.reduce(count=>count+1,0);
+console.log(sizeOfContact,reduceCount);
