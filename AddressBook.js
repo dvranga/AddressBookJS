@@ -4,6 +4,7 @@ const ADDRESS_REGEX = RegExp('^[a-zA-z]{3,}$');
 const ZIP_REGEX = RegExp('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$');
 const PHONE_NUMBER_REGEX = RegExp('^(0/91)?[6-9][0-9]{9}$'); 
 const EMAIL_REGEX=RegExp('^[a-zA-Z0-9]+([._+-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$');
+let addressBookArray=new Array();
 
 class AddressBook{
     // properties
@@ -117,7 +118,11 @@ class AddressBook{
 
 try{
     let contact= new AddressBook("Ranganath","Vatti","gorantla","anatapur","andrapradesh",515231,7483247032,"devangmranganth@gmail.com");
-    console.log(contact);
+    addressBookArray.push(contact);
+    let contact1= new AddressBook("Harinath","Vatti","gorantla","anatapur","andrapradesh",515231,6309609657,"harinath@gmail.com");
+    addressBookArray.push(contact1);
+    console.log(addressBookArray);
+
 }
 catch(e){
     console.error(e);
