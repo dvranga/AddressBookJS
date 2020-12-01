@@ -173,3 +173,19 @@ try{
 }catch(e){
     console.error(e);
 }
+
+//UC_5
+const deleteContact=(firstName)=>{
+   let contact=showContact(firstName);
+   if(contact=="undefied") return "contact not present";
+    addressBookArray.forEach(contact => {
+        if(contact.firstName==firstName){
+            addressBookArray.pop(contact);
+        }
+    });
+    return contact;
+}
+
+let deletedContact=deleteContact("Harinath");
+console.log('deletedContact ',deletedContact);
+console.log(addressBookArray);
