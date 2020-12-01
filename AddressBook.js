@@ -250,7 +250,6 @@ try{
 const showContactByPlace=(place)=>{
     let contact=new Array();
     addressBookArray.filter(checkByPlace=>{
-        console.log(checkByPlace.city===place)
         if(checkByPlace.city===place || checkByPlace.state===place){
             contact.push(showContact(checkByPlace.firstName));
         }
@@ -260,3 +259,12 @@ const showContactByPlace=(place)=>{
 
 let contactByPlace=showContactByPlace("andrapradesh");
 console.log('contactByPlace ',contactByPlace);
+//UC_10
+const countOfPersonsByPlace=(place)=>{
+    let result=showContactByPlace(place);
+    let result1=addressBookArray.filter(check=>check.city===place || check.state===place).reduce(count=>count+1,0);
+    return (result1);
+}
+
+let countByplace=countOfPersonsByPlace("andrapradesh");
+console.log(countByplace);
